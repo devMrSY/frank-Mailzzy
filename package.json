@@ -1,0 +1,28 @@
+{
+  "name": "massemailing",
+  "version": "1.0.0",
+  "description": "this is mass emailing software",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devMrSY/massEmailing.git"
+  },
+  "keywords": [
+    "nodejs",
+    "Mass",
+    "emailing"
+  ],
+  "author": "sooraj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devMrSY/massEmailing/issues"
+  },
+  "homepage": "https://github.com/devMrSY/massEmailing#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.2"
+  }
+}
