@@ -1,9 +1,9 @@
-const arrOfArrayToArrOfObject = (jsonContent) => {
+const arrOfArrayToArrOfObject = (jsonContent, currentIndex = 0) => {
   if (jsonContent) {
     const jsAsArrOfArr = JSON.parse(jsonContent);
-    const objectKey = jsAsArrOfArr[0];
+    const objectKey = jsAsArrOfArr[currentIndex];
     const finalObject = [];
-    for (let index = 1; index < jsAsArrOfArr.length; index++) {
+    for (let index = 1; index < jsAsArrOfArr.length - 1; index++) {
       let currentObject = {};
       for (let innerIndex = 0; innerIndex < objectKey.length; innerIndex++) {
         currentObject[objectKey[innerIndex]] = jsAsArrOfArr[index][innerIndex];

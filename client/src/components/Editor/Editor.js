@@ -7,12 +7,7 @@ const Editor = () => {
   const [content, setContent] = useState("");
   const editor = useRef(null);
 
-  // const dispatch = useDispatch(htmlData(content));
-  const csvDataFromRedux = useSelector((state) => state.data.csvData);
-  const csvHeader = csvDataFromRedux ? csvDataFromRedux[0] : {};
-
-  console.log(csvDataFromRedux);
-  console.log(csvHeader);
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -26,10 +21,9 @@ const Editor = () => {
         // }}
         onChange={(newContent) => {
           setContent(newContent);
-          // dispatch(htmlData(newContent));
+          dispatch(htmlData(newContent));
         }}
       />
-      {content}
     </div>
   );
 };

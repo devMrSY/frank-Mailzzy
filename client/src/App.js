@@ -6,12 +6,15 @@ function App() {
   const [isModal, setIsModal] = useState({
     attachCsc: false,
     emailStatus: false,
+    previewTemplate: false,
   });
 
   const getModal = (modalType) => {
     if (modalType === "csv") setIsModal({ ...isModal, attachCsc: true });
     if (modalType === "emailStatus")
       setIsModal({ ...isModal, emailStatus: true });
+    if (modalType === "previewTemplate")
+      setIsModal({ ...isModal, previewTemplate: true });
   };
 
   const getButton = () => {
@@ -22,6 +25,9 @@ function App() {
         </Button>
         <Button variant='primary' onClick={() => getModal("emailStatus")}>
           Email Status
+        </Button>
+        <Button variant='primary' onClick={() => getModal("previewTemplate")}>
+          Preview Template
         </Button>
       </>
     );
