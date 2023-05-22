@@ -3,8 +3,9 @@ const { sendEmail } = require("../service/emailService");
 
 const Router = express();
 
-Router.get("/sendEmail", (req, res) => {
-  const response = sendEmail();
+Router.post("/sendEmail", async (req, res) => {
+  const { from, to, subject, text, html } = req.body;
+  const response = await sendEmail(from, to, subject, text, html);
   res.json(response);
 });
 
